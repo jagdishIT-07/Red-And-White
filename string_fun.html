@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Function</title>
+    <script>
+        function find_length()
+        {
+            var str = document.getElementById("lenstr").value;
+            var len = str.length;
+            document.getElementById("find_len").innerHTML = "The Length is : "+len;
+        }
+        function convert_uppercase()
+        {
+            var str = document.getElementById("upperstr").value;
+            var str1 = str.toUpperCase();
+            document.getElementById("convert_uppercase").innerHTML = "UpperCase String is : " + str1;
+        }
+        function convert_lowercase()
+        {
+            var str = document.getElementById("lowerstr").value;
+            var str1 = str.toLowerCase();
+            document.getElementById("convert_lowercase").innerHTML = "LowerCase String is : "+str1;
+        }
+        function slice_fun()
+        {
+            var str = document.getElementById("slicestr").value;
+            var str1 = str.slice(2);
+            document.getElementById("slice").innerHTML = "The String Slice from 3rd position : "+ str1;
+        }
+        function include_str()
+        {
+            var str = document.getElementById("includestr").value;
+            var str1 = document.getElementById("includword").value;
+            var str2 = str.includes(str1);
+            if(str2 == true)
+            {
+                document.getElementById("includes").innerHTML = str1+" is matched in string : "+str;
+            }
+            else
+            {
+                document.getElementById("includes").innerHTML = str1 + " is not matched in string : "+str;
+            }
+            
+        }
+        function concat_str()
+        {
+            var str1 = document.getElementById("concatstr1").value;
+            var str2 = document.getElementById("concatstr2").value;
+            var str3 = str1.concat(" ",str2);
+            document.getElementById("concat").innerHTML = "Concated String is : "+ str3;
+        }
+        function replace_word()
+        {
+            var str1 = document.getElementById("replacestr").value;
+            var str2 = document.getElementById("replaceword1").value;
+            var str3 = document.getElementById("replaceword2").value;
+            var str3 = str1.replace(str2,str3);
+            document.getElementById("replace").innerHTML = "Replaced String is : "+ str3;
+        }
+        function replaceall_word()
+        {
+            var str1 = document.getElementById("replaceallstr").value;
+            var str2 = document.getElementById("replaceallword1").value;
+            var str3 = document.getElementById("replaceallword2").value;
+            var str3 = str1.replaceAll(str2,str3);
+            document.getElementById("replaceall").innerHTML = "Replaced All words to String is : "+ str3;
+        }
+        function add_padding()
+        {
+            var str1 = document.getElementById("padstr").value;
+            var str2 = document.getElementById("pad").value;
+            var len = parseInt(document.getElementById("pad_len").value);
+            var str3 = str1.padStart(len,str2);
+            document.getElementById("concat").innerHTML = "After adding padding String is : "+ str3;
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <!--  Find Length    -->
+        Enter a string to find Length: <input type="text" name="txt" id="lenstr" placeholder="Enter any String"><br><br>
+        <input type="button" value="Find Length Of String" onclick="find_length()" style="color: white; background-color:green;cursor: pointer;"><p id="find_len"></p>
+        <hr>
+
+        <!--  Convert into Uppercase    -->
+        Enter a string to convert into UpperCase: <input type="text" name="txt" id="upperstr" placeholder="Enter any String"><br><br>
+        <input type="button" value="Convert into UpperCase" onclick="convert_uppercase()" style="color: white; background-color:red; cursor: pointer;"><p id="convert_uppercase"></p>
+        <hr>
+
+        <!--  Convert into Lowercase    -->
+        Enter a string to convert into LowerCase: <input type="text" name="txt" id="lowerstr" placeholder="Enter any String"><br><br>
+        <input type="button" value="Convert into LowerCase" onclick="convert_lowercase()" style="color: white; background-color:blue; cursor: pointer;"><p id="convert_lowercase"></p>
+        <hr>
+
+        <!--  Slice String    -->
+        Enter a string to Slice: <input type="text" name="txt" id="slicestr" placeholder="Enter any String"><br><br>
+        <input type="button" value="Show Slice Function" onclick="slice_fun()" style="color:black; background-color:aqua; cursor: pointer;"><p id="slice"></p>
+
+        <!--  Find a word using includes string    -->
+        <hr>
+        Enter a string to find word using includes function: <input type="text" name="txt" id="includestr" placeholder="Enter any String"><br><br>
+        Enter word to find  using includes function: <input type="text" name="txt" id="includword" placeholder="Enter any String"><br><br>
+        <input type="button" value="Search word using includes function" onclick="include_str()" style="color: black; background-color:blanchedalmond; cursor: pointer;"><p id="includes"></p>
+
+        <!--  Concat strings     -->  
+        <hr>
+        Enter first string: <input type="text" name="txt" id="concatstr1" placeholder="Enter any String 1"><br><br>
+        Enter second string: <input type="text" name="txt" id="concatstr2" placeholder="Enter any String 2"><br><br>
+        <input type="button" value="Concat both strings" onclick="concat_str()" style="color: white; background-color:brown; cursor: pointer;"><p id="concat"></p>
+
+        <!--  replace word      -->  
+        <hr>
+        Enter string: <input type="text" name="txt" id="replacestr" placeholder="Enter any String "><br><br>
+        Enter word which u want to change: <input type="text" name="txt" id="replaceword1" placeholder="Enter any word"><br><br>
+        Enter word which u want to replace: <input type="text" name="txt" id="replaceword2" placeholder="Enter any word"><br><br>
+        <input type="button" value="Replace word" onclick="replace_word()" style="color: white; background-color:darkmagenta; cursor: pointer;"><p id="replace"></p>
+
+        <!--  replace all word      -->  
+        <hr>
+        Enter string: <input type="text" name="txt" id="replaceallstr" placeholder="Enter any String "><br><br>
+        Enter word which u want to change: <input type="text" name="txt" id="replaceallword1" placeholder="Enter any word"><br><br>
+        Enter word which u want to replace: <input type="text" name="txt" id="replaceallword2" placeholder="Enter any word"><br><br>
+        <input type="button" value="Replace All word" onclick="replaceall_word()" style="color: white; background-color:deeppink; cursor: pointer;"><p id="replaceall"></p>
+
+        <!--  Padding start strings     -->  
+        <hr>
+        Enter string: <input type="text" name="txt" id="padstr" placeholder="Enter any String"><br><br>
+        Enter padding any symbol or character u want to add: <input type="text" name="txt" id="pad" placeholder="Enter padding any symbol or character u want to add"><br><br>
+        Enter total length of string: <input type="number" name="txt" id="pad_len" placeholder="Enter the total length of string"><br><br>
+        <input type="button" value="Add padding" onclick="add_padding()" style="color: white; background-color:black; cursor: pointer;"><p id="padding"></p>
+
+    </form>
+</body>
+</html>
